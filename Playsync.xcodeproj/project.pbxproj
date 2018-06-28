@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D8D700220E4EF7F004BA151 /* MyCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */; };
 		8DFA19FF20E4EC7B00726E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */; };
 		8DFA1A0120E4EC7B00726E6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0020E4EC7B00726E6E /* ViewController.swift */; };
 		8DFA1A0320E4EC7B00726E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0220E4EC7B00726E6E /* Assets.xcassets */; };
 		8DFA1A0620E4EC7B00726E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0420E4EC7B00726E6E /* Main.storyboard */; };
 		8DFA1A1120E4EC7B00726E6E /* PlaysyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A1020E4EC7B00726E6E /* PlaysyncTests.swift */; };
 		8DFA1A1C20E4EC7B00726E6E /* PlaysyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A1B20E4EC7B00726E6E /* PlaysyncUITests.swift */; };
+		8DFA1A2B20E4EC8B00726E6E /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFA1A2A20E4EC8B00726E6E /* iTunesLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewCell.swift; sourceTree = "<group>"; };
 		8DFA19FB20E4EC7B00726E6E /* Playsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DFA1A0020E4EC7B00726E6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		8DFA1A1720E4EC7B00726E6E /* PlaysyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaysyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA1A1B20E4EC7B00726E6E /* PlaysyncUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaysyncUITests.swift; sourceTree = "<group>"; };
 		8DFA1A1D20E4EC7B00726E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DFA1A2A20E4EC8B00726E6E /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = ../../../../Library/Frameworks/iTunesLibrary.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFA1A2B20E4EC8B00726E6E /* iTunesLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,7 @@
 				8DFA1A0F20E4EC7B00726E6E /* PlaysyncTests */,
 				8DFA1A1A20E4EC7B00726E6E /* PlaysyncUITests */,
 				8DFA19FC20E4EC7B00726E6E /* Products */,
+				8DFA1A2920E4EC8B00726E6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +106,7 @@
 				8DFA1A0220E4EC7B00726E6E /* Assets.xcassets */,
 				8DFA1A0420E4EC7B00726E6E /* Main.storyboard */,
 				8DFA1A0720E4EC7B00726E6E /* Info.plist */,
+				8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */,
 			);
 			path = Playsync;
 			sourceTree = "<group>";
@@ -120,6 +127,14 @@
 				8DFA1A1D20E4EC7B00726E6E /* Info.plist */,
 			);
 			path = PlaysyncUITests;
+			sourceTree = "<group>";
+		};
+		8DFA1A2920E4EC8B00726E6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DFA1A2A20E4EC8B00726E6E /* iTunesLibrary.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DFA1A0120E4EC7B00726E6E /* ViewController.swift in Sources */,
+				8D8D700220E4EF7F004BA151 /* MyCustomViewCell.swift in Sources */,
 				8DFA19FF20E4EC7B00726E6E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,12 +418,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J247BFW6KA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Playsync/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.Playsync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -416,12 +438,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J247BFW6KA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Playsync/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.Playsync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -507,6 +535,7 @@
 				8DFA1A2220E4EC7B00726E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DFA1A2320E4EC7B00726E6E /* Build configuration list for PBXNativeTarget "PlaysyncTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +544,7 @@
 				8DFA1A2520E4EC7B00726E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DFA1A2620E4EC7B00726E6E /* Build configuration list for PBXNativeTarget "PlaysyncUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +553,7 @@
 				8DFA1A2820E4EC7B00726E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
