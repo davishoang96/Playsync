@@ -78,7 +78,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Load the previous selected playlist
+        
+        
     }
 
     override var representedObject: Any? {
@@ -108,6 +110,7 @@ class ViewController: NSViewController {
                 }
             }
         }
+        
         print(totalsong)
         
         for pls in _playlist.allPlaylists{
@@ -132,11 +135,15 @@ class ViewController: NSViewController {
                             
                         }
                     }
-                    
                 }
             }
         }
     }
+    
+    
+    
+    
+    
 }
 
 
@@ -151,8 +158,21 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
         if tableColumn?.identifier == "CheckColumn"{
             if let cell: MyCustomViewCell = tableView.make(withIdentifier: "CheckColumn", owner: self) as? MyCustomViewCell
             {
+                
                 cell.CheckBox.setNextState()
                 cell.CheckBox.title = playlist[row].name
+                
+                
+                // Load the previous selected playlist
+                for m in selected_playlists{
+                    if m == playlist[row].name{
+                        if cell.CheckBox.title == m{
+                            cell.CheckBox.state = 1
+                        }
+                    }
+                }
+                
+                
                 cell.onClickCheckBox = {sender in
                     
                     //print(playlist[row].name)
@@ -162,9 +182,8 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
                     
                     
                     
-                    
-                    
                 }
+                
                 return cell
             }
         }
