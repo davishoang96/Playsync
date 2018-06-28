@@ -84,8 +84,11 @@ class ViewController: NSViewController {
     
     
     
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 70d6bc6... One way backup
+=======
+>>>>>>> dca096fa03444720eb5e95a3cc549ba0f8fbcf14
 }
 
 extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
@@ -116,11 +119,14 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
                     
                     // Get all song in playlist
                     
+<<<<<<< HEAD
                     for song in playlist[row].items{
                         print(song.location?.lastPathComponent)
                     }
                     
                     
+=======
+>>>>>>> dca096fa03444720eb5e95a3cc549ba0f8fbcf14
                 }
                 
                 return cell

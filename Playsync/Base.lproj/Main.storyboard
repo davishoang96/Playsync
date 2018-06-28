@@ -714,6 +714,9 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dca096fa03444720eb5e95a3cc549ba0f8fbcf14
                                                             <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-b3-o8N">
                                                                 <rect key="frame" x="0.0" y="0.0" width="758" height="302"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -732,6 +735,7 @@
                                                                     <real value="250"/>
                                                                 </holdingPriorities>
                                                             </splitView>
+<<<<<<< HEAD
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="VZN-0U-leW" secondAttribute="height" multiplier="379:151" id="Gud-I5-hP4"/>
@@ -920,6 +924,11 @@
                                                             <constraint firstAttribute="bottom" secondItem="eIG-My-UMi" secondAttribute="bottom" id="sjK-pp-WQY"/>
                                                             <constraint firstItem="eIG-My-UMi" firstAttribute="leading" secondItem="xYv-Sf-LZq" secondAttribute="leading" id="xhU-gN-EZo"/>
 >>>>>>> parent of 70d6bc6... One way backup
+=======
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="VZN-0U-leW" secondAttribute="height" multiplier="379:151" id="Gud-I5-hP4"/>
+>>>>>>> dca096fa03444720eb5e95a3cc549ba0f8fbcf14
                                                         </constraints>
                                                     </customView>
                                                 </subviews>
