@@ -11,74 +11,15 @@ import iTunesLibrary
 
 let library = try! ITLibrary.init(apiVersion: "1.1")
 let playlist = library.allPlaylists
-let songs = library.allMediaItems
-
-var selected_playlists: [String] = []
-var destinationFolder: String = ""
-
-
-
-
-
-
-
 
 class ViewController: NSViewController {
-    
-    @IBOutlet weak var ProgressBar: NSProgressIndicator!
-    
-    @IBOutlet weak var ChooseFolderBtn: NSButton!
-    @IBOutlet weak var SyncBtn: NSButton!
-    
-    
-    
-    
-    @IBAction func onClickChooseBtn(_ sender: NSButton) {
-        let dialog = NSOpenPanel();
-        
-        dialog.title                   = "Choose a destination to sync";
-        dialog.showsResizeIndicator    = true;
-        dialog.showsHiddenFiles        = false;
-        dialog.canChooseDirectories    = true;
-        dialog.canCreateDirectories    = true;
-        dialog.allowsMultipleSelection = false;
-    
-        
-        if (dialog.runModal() == NSModalResponseOK) {
-            let result = dialog.url // Pathname of the file
-            
-            if (result != nil) {
-                destinationFolder = result!.path
-                //AlertMessage.messageBox(message: "Alert", info: destinationFolder)
-                print(destinationFolder)
-            }
-        } else {
-            // User clicked on "Cancel"
-            return
-        }
-    }
-    
-    @IBAction func onClickSyncBtn(_ sender: NSButton) {
-        
-        ProgressBar.doubleValue = 0
-        
-        DispatchQueue.global(qos:.background).async {
-            
-
-            self.OneWayBackUp(thePlaylists: selected_playlists)
-
-        }
-    }
-    
-    
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Load the previous selected playlist
+        
+        
     }
 
     override var representedObject: Any? {
@@ -86,6 +27,7 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+<<<<<<< HEAD
     
     func OneWayBackUp(thePlaylists: [String]){
         
@@ -108,6 +50,7 @@ class ViewController: NSViewController {
                 }
             }
         }
+        
         print(totalsong)
         
         for pls in _playlist.allPlaylists{
@@ -132,15 +75,18 @@ class ViewController: NSViewController {
                             
                         }
                     }
-                    
                 }
             }
         }
     }
+    
+    
+    
+    
+    
+=======
+>>>>>>> parent of 70d6bc6... One way backup
 }
-
-
-
 
 extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -151,28 +97,36 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
         if tableColumn?.identifier == "CheckColumn"{
             if let cell: MyCustomViewCell = tableView.make(withIdentifier: "CheckColumn", owner: self) as? MyCustomViewCell
             {
+                
                 cell.CheckBox.setNextState()
                 cell.CheckBox.title = playlist[row].name
+                
+                
+                // Load the previous selected playlist
+                for m in selected_playlists{
+                    if m == playlist[row].name{
+                        if cell.CheckBox.title == m{
+                            cell.CheckBox.state = 1
+                        }
+                    }
+                }
+                
+                
                 cell.onClickCheckBox = {sender in
                     
-                    //print(playlist[row].name)
+                    // Get all song in playlist
                     
-                    // Append selected playlist to array
-                    selected_playlists.append(playlist[row].name)
-                    
-                    
-                    
+                    for song in playlist[row].items{
+                        print(song.location?.lastPathComponent)
+                    }
                     
                     
                 }
+                
                 return cell
             }
         }
         return nil
-    }
-    
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        
     }
 }
 

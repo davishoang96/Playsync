@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -664,10 +665,20 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="CCCF1009-8DA1-438A-9107-0C4795CC0E23" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="HxP-q6-R5c">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="aH8-ge-Fdx"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="a04-db-siI"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Ykg-DP-fgT"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="fiV-GG-yD1"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="oKn-FK-Ibs"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="b3k-FG-xJb"/>
                         </connections>
@@ -695,20 +706,43 @@
                                         <rect key="frame" x="0.0" y="0.0" width="758" height="302"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29S-Kc-40f">
+                                            <splitView arrangesAllSubviews="NO" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29S-Kc-40f">
                                                 <rect key="frame" x="0.0" y="0.0" width="758" height="302"/>
                                                 <subviews>
                                                     <customView id="VZN-0U-leW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="302"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="758" height="302"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
+<<<<<<< HEAD
+                                                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-b3-o8N">
+                                                                <rect key="frame" x="0.0" y="0.0" width="758" height="302"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <subviews>
+                                                                    <customView fixedFrame="YES" id="mgc-Xj-za8">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="302"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </customView>
+                                                                    <customView fixedFrame="YES" id="FDX-fR-oPp">
+                                                                        <rect key="frame" x="361" y="0.0" width="397" height="302"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </customView>
+                                                                </subviews>
+                                                                <holdingPriorities>
+                                                                    <real value="250"/>
+                                                                    <real value="250"/>
+                                                                </holdingPriorities>
+                                                            </splitView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="VZN-0U-leW" secondAttribute="height" multiplier="379:151" id="Gud-I5-hP4"/>
+=======
                                                             <scrollView identifier="playlistView" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMU-St-saa">
                                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="302"/>
                                                                 <clipView key="contentView" id="tkC-G3-eZD">
                                                                     <rect key="frame" x="1" y="0.0" width="252" height="301"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pxW-v9-kjz" viewBased="YES" id="Qam-Yd-crR">
+                                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pxW-v9-kjz" viewBased="YES" id="Qam-Yd-crR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="252" height="278"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -759,7 +793,7 @@
                                                                     </subviews>
                                                                 </clipView>
                                                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="RfL-ZP-0OA">
-                                                                    <rect key="frame" x="1" y="116" width="231.60085296630859" height="15"/>
+                                                                    <rect key="frame" x="1" y="116.10038650035858" width="231.60085296630859" height="15"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="cVN-cG-lS3">
@@ -867,7 +901,7 @@
                                                                     </subviews>
                                                                 </clipView>
                                                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="7pW-hx-2p8">
-                                                                    <rect key="frame" x="1" y="115" width="230.81771087646484" height="15"/>
+                                                                    <rect key="frame" x="1" y="115.74552524089813" width="230.81771087646484" height="15"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="6fp-mv-amg">
@@ -885,11 +919,11 @@
                                                             <constraint firstItem="eIG-My-UMi" firstAttribute="top" secondItem="xYv-Sf-LZq" secondAttribute="top" id="h02-Nj-qre"/>
                                                             <constraint firstAttribute="bottom" secondItem="eIG-My-UMi" secondAttribute="bottom" id="sjK-pp-WQY"/>
                                                             <constraint firstItem="eIG-My-UMi" firstAttribute="leading" secondItem="xYv-Sf-LZq" secondAttribute="leading" id="xhU-gN-EZo"/>
+>>>>>>> parent of 70d6bc6... One way backup
                                                         </constraints>
                                                     </customView>
                                                 </subviews>
                                                 <holdingPriorities>
-                                                    <real value="250"/>
                                                     <real value="250"/>
                                                 </holdingPriorities>
                                             </splitView>
@@ -904,37 +938,6 @@
                                     <customView fixedFrame="YES" id="aGz-BG-wWz">
                                         <rect key="frame" x="0.0" y="312" width="758" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <subviews>
-                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A90-xf-n3O">
-                                                <rect key="frame" x="674" y="13" width="70" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="push" title="Sync" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mVG-yB-pAO">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                    <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="onClickSyncBtn:" target="XfG-lQ-9wD" id="DKW-o1-6G8"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-Bp-ml1">
-                                                <rect key="frame" x="545" y="13" width="129" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="push" title="Choose Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ry8-lz-flp">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="onClickChooseBtn:" target="XfG-lQ-9wD" id="CnI-Rq-CBR"/>
-                                                </connections>
-                                            </button>
-                                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="De7-KO-C8I">
-                                                <rect key="frame" x="20" y="19" width="523" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            </progressIndicator>
-                                        </subviews>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
@@ -950,11 +953,6 @@ DQ
                             <constraint firstItem="des-iV-XnL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="sHT-T9-ym5"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="ChooseFolderBtn" destination="XV1-Bp-ml1" id="oxe-h6-fW1"/>
-                        <outlet property="ProgressBar" destination="De7-KO-C8I" id="e3k-84-jFF"/>
-                        <outlet property="SyncBtn" destination="A90-xf-n3O" id="Go9-aQ-pdZ"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
