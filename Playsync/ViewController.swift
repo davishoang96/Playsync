@@ -100,7 +100,6 @@ class ViewController: NSViewController {
                 if pls.name == sync_playlist{
                     
                     // Find total song
-                    
                     let playlist_songs = pls.items.count
                     
                     totalsong += Double(playlist_songs)
@@ -109,6 +108,8 @@ class ViewController: NSViewController {
             }
         }
         print(totalsong)
+        
+        
         
         for pls in _playlist.allPlaylists{
             for sync_playlist in thePlaylists {
