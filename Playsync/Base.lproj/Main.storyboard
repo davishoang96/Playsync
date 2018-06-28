@@ -708,7 +708,7 @@
                                                                     <rect key="frame" x="1" y="0.0" width="252" height="301"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pxW-v9-kjz" viewBased="YES" id="Qam-Yd-crR">
+                                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="pxW-v9-kjz" viewBased="YES" id="Qam-Yd-crR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="252" height="278"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -759,7 +759,7 @@
                                                                     </subviews>
                                                                 </clipView>
                                                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="RfL-ZP-0OA">
-                                                                    <rect key="frame" x="1" y="116.10038650035858" width="231.60085296630859" height="15"/>
+                                                                    <rect key="frame" x="1" y="116" width="231.60085296630859" height="15"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="cVN-cG-lS3">
@@ -867,7 +867,7 @@
                                                                     </subviews>
                                                                 </clipView>
                                                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="7pW-hx-2p8">
-                                                                    <rect key="frame" x="1" y="115.74552524089813" width="230.81771087646484" height="15"/>
+                                                                    <rect key="frame" x="1" y="115" width="230.81771087646484" height="15"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="6fp-mv-amg">
@@ -904,6 +904,37 @@
                                     <customView fixedFrame="YES" id="aGz-BG-wWz">
                                         <rect key="frame" x="0.0" y="312" width="758" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A90-xf-n3O">
+                                                <rect key="frame" x="674" y="13" width="70" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="push" title="Sync" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mVG-yB-pAO">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="onClickSyncBtn:" target="XfG-lQ-9wD" id="DKW-o1-6G8"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-Bp-ml1">
+                                                <rect key="frame" x="545" y="13" width="129" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="push" title="Choose Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ry8-lz-flp">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="onClickChooseBtn:" target="XfG-lQ-9wD" id="CnI-Rq-CBR"/>
+                                                </connections>
+                                            </button>
+                                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="De7-KO-C8I">
+                                                <rect key="frame" x="20" y="19" width="523" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            </progressIndicator>
+                                        </subviews>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
@@ -919,6 +950,11 @@
                             <constraint firstItem="des-iV-XnL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="sHT-T9-ym5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ChooseFolderBtn" destination="XV1-Bp-ml1" id="oxe-h6-fW1"/>
+                        <outlet property="ProgressBar" destination="De7-KO-C8I" id="e3k-84-jFF"/>
+                        <outlet property="SyncBtn" destination="A90-xf-n3O" id="Go9-aQ-pdZ"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

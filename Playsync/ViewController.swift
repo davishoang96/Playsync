@@ -11,8 +11,69 @@ import iTunesLibrary
 
 let library = try! ITLibrary.init(apiVersion: "1.1")
 let playlist = library.allPlaylists
+let songs = library.allMediaItems
+
+var selected_playlists: [String] = []
+var destinationFolder: String = ""
+
+
+
+
+
+
+
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var ProgressBar: NSProgressIndicator!
+    
+    @IBOutlet weak var ChooseFolderBtn: NSButton!
+    @IBOutlet weak var SyncBtn: NSButton!
+    
+    
+    
+    
+    @IBAction func onClickChooseBtn(_ sender: NSButton) {
+        let dialog = NSOpenPanel();
+        
+        dialog.title                   = "Choose a destination to sync";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canChooseDirectories    = true;
+        dialog.canCreateDirectories    = true;
+        dialog.allowsMultipleSelection = false;
+    
+        
+        if (dialog.runModal() == NSModalResponseOK) {
+            let result = dialog.url // Pathname of the file
+            
+            if (result != nil) {
+                destinationFolder = result!.path
+                //AlertMessage.messageBox(message: "Alert", info: destinationFolder)
+                print(destinationFolder)
+            }
+        } else {
+            // User clicked on "Cancel"
+            return
+        }
+    }
+    
+    @IBAction func onClickSyncBtn(_ sender: NSButton) {
+        
+        ProgressBar.doubleValue = 0
+        
+        DispatchQueue.global(qos:.background).async {
+            
+
+            self.OneWayBackUp(thePlaylists: selected_playlists)
+
+        }
+    }
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +86,61 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    func OneWayBackUp(thePlaylists: [String]){
+        
+        let fileManager = FileManager.default
+        let _playlist = try! ITLibrary.init(apiVersion: "1.1")
+        var totalsong: Double = 0
+        var i: Double = 0
+        
+        // Find total song in percentage
+        for pls in _playlist.allPlaylists{
+            for sync_playlist in thePlaylists {
+                if pls.name == sync_playlist{
+                    
+                    // Find total song
+                    
+                    let playlist_songs = pls.items.count
+                    
+                    totalsong += Double(playlist_songs)
+                    
+                }
+            }
+        }
+        print(totalsong)
+        
+        for pls in _playlist.allPlaylists{
+            for sync_playlist in thePlaylists {
+                if pls.name == sync_playlist{
+                    
+                    for song in pls.items{
+                        let songpath:String = (song.location?.path)!
+                        let songfilename = (song.location?.lastPathComponent)!
+                        let myPath:String = destinationFolder + "/" + songfilename
+                        print(myPath)
+                        // Copy songs from selected playlist
+                        try? fileManager.copyItem(atPath: songpath, toPath: myPath)
+                        
+                        i += 100 / totalsong
+                        
+                        DispatchQueue.main.async {
+                            
+    
+                            self.ProgressBar.doubleValue = i.rounded()
+                   
+                            
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
 }
+
+
+
 
 extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -40,11 +155,11 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
                 cell.CheckBox.title = playlist[row].name
                 cell.onClickCheckBox = {sender in
                     
-                    // Get all song in playlist
+                    //print(playlist[row].name)
                     
-                    for song in playlist[row].items{
-                        print(song.location?.lastPathComponent)
-                    }
+                    // Append selected playlist to array
+                    selected_playlists.append(playlist[row].name)
+                    
                     
                     
                     
@@ -54,6 +169,10 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
             }
         }
         return nil
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        
     }
 }
 
