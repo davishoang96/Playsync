@@ -183,13 +183,14 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if tableView.tag == 1{
             if tableColumn?.identifier == "CheckColumn"{
-                if let cell: MyCustomViewCell = tableView.make(withIdentifier: "CheckColumn", owner: self) as? MyCustomViewCell
+                if let cell: myCustomCellView = tableView.make(withIdentifier: "CheckColumn", owner: self) as? myCustomCellView
                 {
-                    cell.CheckBox.state = 0
-                    cell.CheckBox.title = playlist[row].name
-                    cell.onClickCheckBox = {sender in
+                    cell.PlaylistCbx.state = 0
+                    cell.PlaylistCbx.title = playlist[row].name
+                    cell.onClickPlaylistCbx = {sender in
                         
                         // Append selected playlist to array
+                        print(cell.PlaylistCbx.title)
                         selected_playlists.append(playlist[row].name)
 
                     }
@@ -199,11 +200,17 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
         }
         else if tableView.tag == 2{
             if tableColumn?.identifier == "AlbumColumn"{
-                if let cell: MyCustomViewCell = tableView.make(withIdentifier: "AlbumColumn", owner: self) as? MyCustomViewCell
+                if let cell: myCustomCellView = tableView.make(withIdentifier: "AlbumColumn", owner: self) as? myCustomCellView
                 {
                     cell.AlbumCbx.state = 0
                     
                     cell.AlbumCbx.title = album[row]!
+                    
+                    cell.onClickAlbumCbx = {sender in
+                        
+                        print(cell.AlbumCbx.title)
+                        
+                    }
                     
                     return cell
                 }
@@ -211,11 +218,16 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
         }
         else if tableView.tag == 3{
             if tableColumn?.identifier == "ArtistColumn"{
-                if let cell: MyCustomViewCell = tableView.make(withIdentifier: "ArtistColumn", owner: self) as? MyCustomViewCell
+                if let cell: myCustomCellView = tableView.make(withIdentifier: "ArtistColumn", owner: self) as? myCustomCellView
                 {
-                    cell.AlbumCbx.state = 0
+                    cell.ArtistsCbx.state = 0
                     
-                    cell.AlbumCbx.title = artists[row]!
+                    cell.ArtistsCbx.title = artists[row]!
+                    
+                    cell.onClickArtistCbx = {sender in
+                        
+                        print(cell.ArtistsCbx.title)
+                    }
                     
                     return cell
                 }

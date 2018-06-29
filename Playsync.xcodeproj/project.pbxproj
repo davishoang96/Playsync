@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8D74F77B20E4F56A001A2932 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74F77A20E4F56A001A2932 /* AlertMessage.swift */; };
-		8D8D700220E4EF7F004BA151 /* MyCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */; };
+		8D79BAB320E69C9D0081DFE7 /* myCustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79BAB220E69C9D0081DFE7 /* myCustomCellView.swift */; };
+		8DA02FB820E6A0F000C195A1 /* NewMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DA02FB720E6A0F000C195A1 /* NewMain.storyboard */; };
 		8DFA19FF20E4EC7B00726E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */; };
 		8DFA1A0120E4EC7B00726E6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0020E4EC7B00726E6E /* ViewController.swift */; };
 		8DFA1A0320E4EC7B00726E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0220E4EC7B00726E6E /* Assets.xcassets */; };
-		8DFA1A0620E4EC7B00726E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0420E4EC7B00726E6E /* Main.storyboard */; };
 		8DFA1A1120E4EC7B00726E6E /* PlaysyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A1020E4EC7B00726E6E /* PlaysyncTests.swift */; };
 		8DFA1A1C20E4EC7B00726E6E /* PlaysyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A1B20E4EC7B00726E6E /* PlaysyncUITests.swift */; };
 		8DFA1A2B20E4EC8B00726E6E /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFA1A2A20E4EC8B00726E6E /* iTunesLibrary.framework */; };
@@ -37,12 +37,12 @@
 
 /* Begin PBXFileReference section */
 		8D74F77A20E4F56A001A2932 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
-		8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewCell.swift; sourceTree = "<group>"; };
+		8D79BAB220E69C9D0081DFE7 /* myCustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCustomCellView.swift; sourceTree = "<group>"; };
+		8DA02FB720E6A0F000C195A1 /* NewMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMain.storyboard; sourceTree = "<group>"; };
 		8DFA19FB20E4EC7B00726E6E /* Playsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DFA1A0020E4EC7B00726E6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8DFA1A0220E4EC7B00726E6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8DFA1A0520E4EC7B00726E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DFA1A0720E4EC7B00726E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DFA1A0C20E4EC7B00726E6E /* PlaysyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaysyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA1A1020E4EC7B00726E6E /* PlaysyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaysyncTests.swift; sourceTree = "<group>"; };
@@ -106,10 +106,10 @@
 				8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */,
 				8DFA1A0020E4EC7B00726E6E /* ViewController.swift */,
 				8DFA1A0220E4EC7B00726E6E /* Assets.xcassets */,
-				8DFA1A0420E4EC7B00726E6E /* Main.storyboard */,
 				8DFA1A0720E4EC7B00726E6E /* Info.plist */,
-				8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */,
 				8D74F77A20E4F56A001A2932 /* AlertMessage.swift */,
+				8D79BAB220E69C9D0081DFE7 /* myCustomCellView.swift */,
+				8DA02FB720E6A0F000C195A1 /* NewMain.storyboard */,
 			);
 			path = Playsync;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA02FB820E6A0F000C195A1 /* NewMain.storyboard in Resources */,
 				8DFA1A0320E4EC7B00726E6E /* Assets.xcassets in Resources */,
-				8DFA1A0620E4EC7B00726E6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DFA1A0120E4EC7B00726E6E /* ViewController.swift in Sources */,
-				8D8D700220E4EF7F004BA151 /* MyCustomViewCell.swift in Sources */,
+				8D79BAB320E69C9D0081DFE7 /* myCustomCellView.swift in Sources */,
 				8D74F77B20E4F56A001A2932 /* AlertMessage.swift in Sources */,
 				8DFA19FF20E4EC7B00726E6E /* AppDelegate.swift in Sources */,
 			);
@@ -313,17 +313,6 @@
 			targetProxy = 8DFA1A1820E4EC7B00726E6E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8DFA1A0420E4EC7B00726E6E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8DFA1A0520E4EC7B00726E6E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8DFA1A1E20E4EC7B00726E6E /* Debug */ = {
