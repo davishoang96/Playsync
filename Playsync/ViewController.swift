@@ -19,10 +19,6 @@ var destinationFolder: String = ""
 
 
 
-
-
-
-
 class ViewController: NSViewController {
     
     @IBOutlet weak var ProgressBar: NSProgressIndicator!
@@ -30,6 +26,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var ChooseFolderBtn: NSButton!
     @IBOutlet weak var SyncBtn: NSButton!
     
+    @IBOutlet weak var pathControl: NSPathControl!
+    @IBAction func onClickPathControl(_ sender: NSPathControl) {
+        
+    }
     
     
     
@@ -155,9 +155,7 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
                 cell.CheckBox.setNextState()
                 cell.CheckBox.title = playlist[row].name
                 cell.onClickCheckBox = {sender in
-                    
-                    //print(playlist[row].name)
-                    
+
                     // Append selected playlist to array
                     selected_playlists.append(playlist[row].name)
                     
