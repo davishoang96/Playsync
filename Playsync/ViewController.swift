@@ -26,11 +26,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var ChooseFolderBtn: NSButton!
     @IBOutlet weak var SyncBtn: NSButton!
     
-    @IBOutlet weak var pathControl: NSPathControl!
-    @IBAction func onClickPathControl(_ sender: NSPathControl) {
-        
-    }
-    
     
     
     @IBAction func onClickChooseBtn(_ sender: NSButton) {
@@ -65,7 +60,7 @@ class ViewController: NSViewController {
         DispatchQueue.global(qos:.background).async {
             
 
-            self.OneWayBackUp(thePlaylists: selected_playlists)
+            //self.OneWayBackUp(thePlaylists: selected_playlists)
 
         }
     }
@@ -87,7 +82,7 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+}
 
 extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
