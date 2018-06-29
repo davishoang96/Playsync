@@ -154,9 +154,7 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
                 cell.CheckBox.setNextState()
                 cell.CheckBox.title = playlist[row].name
                 cell.onClickCheckBox = {sender in
-                    
-                    //print(playlist[row].name)
-                    
+              
                     // Append selected playlist to array
                     selected_playlists.append(playlist[row].name)
                     
