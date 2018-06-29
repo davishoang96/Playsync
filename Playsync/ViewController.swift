@@ -12,6 +12,7 @@ import iTunesLibrary
 let library = try! ITLibrary.init(apiVersion: "1.1")
 let playlist = library.allPlaylists
 let songs = library.allMediaItems
+var album: [String] = []
 
 var selected_playlists: [String] = []
 var destinationFolder: String = ""
@@ -138,15 +139,25 @@ class ViewController: NSViewController {
 
 extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
-        var i = 0
+        
+        
+        
         if tableView.tag == 1{
             return playlist.count
         } else if tableView.tag == 2{
+            
             for item in library.allMediaItems
             {
                 
+                if let albumName = item.album.title
+                {
+                    if !album.contains(albumName)
+                    {
+                        album.append(albumName)
+                    }
+                }
             }
-            print(i)
+            return album.count
         }
         return 0
     }
@@ -156,7 +167,7 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
             if tableColumn?.identifier == "CheckColumn"{
                 if let cell: MyCustomViewCell = tableView.make(withIdentifier: "CheckColumn", owner: self) as? MyCustomViewCell
                 {
-                    cell.CheckBox.setNextState()
+                    cell.CheckBox.state = 0
                     cell.CheckBox.title = playlist[row].name
                     cell.onClickCheckBox = {sender in
                         
@@ -172,10 +183,9 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource{
             if tableColumn?.identifier == "AlbumColumn"{
                 if let cell: MyCustomViewCell = tableView.make(withIdentifier: "AlbumColumn", owner: self) as? MyCustomViewCell
                 {
-                    cell.AlbumCbx.setNextState()
-                   
-                    
-                    return cell
+//                    cell.AlbumCbx.state = 0
+//                    cell.AlbumCbx.title = album[row]
+//                    return cell
                 }
             }
         }
