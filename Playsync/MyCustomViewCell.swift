@@ -18,7 +18,18 @@ class MyCustomViewCell: NSTableCellView {
     }
     
     //Album checkbox
+    var onClickAlbumCbx: ((_ sender: NSButton) -> ())?
+    @IBOutlet weak var AlbumCbx: NSButton!
+    @IBAction func onClickAlbumCbx(_ sender: NSButton) {
+        onClickAlbumCbx?(sender)
+    }
     
+    
+    var onClickArtCbx: ((_ sender: NSButton) -> ())?
+    @IBOutlet var ArtistCbx: NSButton!
+    @IBAction func onClickArtCbx(_ sender: NSButton) {
+        onClickArtCbx?(sender)
+    }
     
     
     
