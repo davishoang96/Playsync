@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8D38808820FE97300007AC40 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D38808720FE97300007AC40 /* SettingData.swift */; };
 		8D38808A20FEA2810007AC40 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D38808920FEA2810007AC40 /* Utils.swift */; };
-		8D74F77B20E4F56A001A2932 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74F77A20E4F56A001A2932 /* AlertMessage.swift */; };
 		8D8D700220E4EF7F004BA151 /* MyCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */; };
 		8DFA19FF20E4EC7B00726E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */; };
 		8DFA1A0120E4EC7B00726E6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1A0020E4EC7B00726E6E /* ViewController.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		8D38808720FE97300007AC40 /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
 		8D38808920FEA2810007AC40 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		8D74F77A20E4F56A001A2932 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewCell.swift; sourceTree = "<group>"; };
 		8DFA19FB20E4EC7B00726E6E /* Playsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA19FE20E4EC7B00726E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				8DFA1A0420E4EC7B00726E6E /* Main.storyboard */,
 				8DFA1A0720E4EC7B00726E6E /* Info.plist */,
 				8D8D700120E4EF7F004BA151 /* MyCustomViewCell.swift */,
-				8D74F77A20E4F56A001A2932 /* AlertMessage.swift */,
 			);
 			path = Playsync;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 				8D38808820FE97300007AC40 /* SettingData.swift in Sources */,
 				8DFA1A0120E4EC7B00726E6E /* ViewController.swift in Sources */,
 				8D8D700220E4EF7F004BA151 /* MyCustomViewCell.swift in Sources */,
-				8D74F77B20E4F56A001A2932 /* AlertMessage.swift in Sources */,
 				8DFA19FF20E4EC7B00726E6E /* AppDelegate.swift in Sources */,
 				8D38808A20FEA2810007AC40 /* Utils.swift in Sources */,
 			);
@@ -447,7 +443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

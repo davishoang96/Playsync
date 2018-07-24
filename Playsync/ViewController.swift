@@ -105,7 +105,7 @@ class ViewController: NSViewController {
 
         if SyncBtn.state.rawValue == 1{
             
-            print(tools.fileSize(value: selected_playlists))
+            //print(tools.fileSize(value: selected_playlists))
             
             let queue = OperationQueue()
             
@@ -157,6 +157,14 @@ class ViewController: NSViewController {
             else
             {
                 print("LOCATION NOT FOUND")
+                if tools.dialogOKCancel(question: "Notice", text: "Previou sync location has been deleted, do you want to create a new sync location?") == true
+                {
+                    self.onClickPathControl(NSPathControl.init())
+                }
+                else
+                {
+                    return
+                }
             }
         }
         
@@ -356,7 +364,7 @@ class ViewController: NSViewController {
             
             
             
-            print(tools.intToMB(value: currentMB), "of", tools.fileSize(value: selected_playlists))
+            print(tools.intToMB(value: currentMB), "of", tools.fileSize(value: mediaItems))
             print(song.bitrate)
             
             i += 100 / totalsong
@@ -392,7 +400,7 @@ class ViewController: NSViewController {
             self.SyncBtn.state = NSControl.StateValue(rawValue: 0)
             self.ProgressInfo.stringValue = "Done"
             self.SyncBtn.title = "Sync"
-            let dialog = tools.dialogOKCancel(question: "Notice", text: "Sync completed")
+            let dialog = tools.dialogOKCancel(question: "Notice", text: String(mediaItems.count) + " songs has been synced")
         }
     }
 }

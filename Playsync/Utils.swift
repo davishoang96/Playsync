@@ -197,24 +197,14 @@ class tools{
     }
     
     
-    class func fileSize(value: [String]) -> String
+    class func fileSize(value: [ITLibMediaItem]) -> String
     {
         var totalsize: UInt64 = 0
         var result: String = ""
         
-        let playlists = try! ITLibrary.init(apiVersion: "1.1").allPlaylists
-        for playlist in playlists
+        for v in value
         {
-            for pls in value
-            {
-                if playlist.name == pls
-                {
-                    for song in playlist.items
-                    {
-                        totalsize += song.fileSize
-                    }
-                }
-            }
+            totalsize += v.fileSize
         }
         
         result = intToMB(value: totalsize)
